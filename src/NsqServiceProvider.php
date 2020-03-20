@@ -33,7 +33,7 @@ class NsqServiceProvider extends QueueServiceProvider
     public function registerNsqConnector($manager)
     {
         $key = 'queue.connections.nsq';
-        $this->app['config']->set($key, require __DIR__ . '/config/queue.php');
+        $this->app['config']->set($key, require __DIR__ . '/../config/queue.php');
 
         $manager->addConnector('nsq', function () {
             return new NsqConnector();
